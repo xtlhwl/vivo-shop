@@ -4,7 +4,7 @@
     <div class="official"><img src="/static/img/official.png" alt="图片" style="width:100%;height:100% "></div>
     <Home-Swipe ></Home-Swipe>
     <Home-List></Home-List>
-    <Home-Container></Home-Container>
+    <Home-Container :items=items ></Home-Container>
     <Home-Footer></Home-Footer>
   </div>
 </template>
@@ -14,10 +14,12 @@ import HomeList from './HomeList.vue'
 import HomeSwipe from './HomeSwipe.vue'
 import HomeFooter from './HomeFooter.vue'
 import HomeContainer from './HomeContainer.vue'
+import axios from 'axios'
 
 export default {
   data () {
     return {
+      items:[]
     }
   },
   components: {
@@ -27,9 +29,16 @@ export default {
     HomeContainer, 
   },
   methods:{
-    btn(){
-      alert("选择碎屏宝or定制手机")
+    getData:function(){
+      axios.get("/static/ceshi.json").then((res) =>{
+        
+        this.items = res.data.data.home
+        console.log(this.items)
+      })
     }
+  },
+  created(){
+    this.getData()
   }
 }
 </script>
