@@ -12,7 +12,7 @@
 
 import HomeList from './HomeList.vue'
 import HomeSwipe from './HomeSwipe.vue'
-import HomeFooter from './HomeFooter.vue'
+import HomeFooter from '../HomeFooter.vue'
 import HomeContainer from './HomeContainer.vue'
 import axios from 'axios'
 
