@@ -7,12 +7,13 @@
       <div class="header-rigth"></div>
   </div>
 </template>
-
 <script>
 export default {
   props:{
-      title:String,
-      default:"你"
+    title:{
+            type:String,
+            default:""
+          }
   }
 }
 </script>

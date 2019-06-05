@@ -3,22 +3,22 @@
     <ul>
         <li >
             <div>
-                <img src="/static/img/xuangou.jpg" alt="选购">
+                <img v-lazy="/static/img/xuangou.jpg" alt="选购">
             </div>
         </li>
         <li >
             <div>
-                <img src="/static/img/peijian.jpg" alt="选购">
+                <img v-lazy="/static/img/peijian.jpg" alt="选购">
             </div>
         </li>
         <li >
             <div @click="btn">
-                <img src="/static/img/pingbao.jpg" alt="选购">
+                <img v-lazy="/static/img/pingbao.jpg" alt="选购">
             </div>
         </li>
         <li >
             <div @click="btn">
-                <img src="/static/img/dingzhi.jpg" alt="选购">
+                <img v-lazy="/static/img/dingzhi.jpg" alt="选购">
             </div>
         </li>
     </ul>
