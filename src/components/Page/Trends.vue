@@ -1,12 +1,15 @@
 <template>
   <div>
-      动态页面
+      <t-header></t-header>
+      <t-content></t-content>   
     <t-footer></t-footer>
   </div>
 </template>
 
 <script>
 import footer from '../HomeFooter.vue'
+import header from '../header/Theader.vue'
+import content from '../common/content.vue'
   export default {
     name:'',
     props:[''],
@@ -17,7 +20,9 @@ import footer from '../HomeFooter.vue'
     },
 
     components: {
-        't-footer':footer
+        't-footer':footer,
+        't-header':header,
+        't-content':content
     },
 
     computed: {},

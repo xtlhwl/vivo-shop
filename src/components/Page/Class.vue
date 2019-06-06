@@ -4,15 +4,16 @@
     <div class="calssify-con">
         <div class="calssify-left">
             <ul class="calssify-left-ul">
-                <li v-for="(item,index) in items.left" :key="index" @click="selectSort(index)" :class="{action: index===calssifyIndex}">
+                <li v-for="(item,index) in items.left" :key="index" @click="selectSort(index)" :class="{active:index===calssifyIndex}">
                    {{item.name}}
                 </li>
             </ul>
         </div>
-        <div class="calssify-right">
+        <div class="calssify-rigth">
             <ul class="calssify-left-ul">
-                <li>
-
+                <li v-for="(item,index) in right.rigth_data" :key="index">
+                    <img v-lazy="item.img" >
+                    <span>{{item.name}}</span>
                 </li>
             </ul>
         </div>
@@ -29,7 +30,9 @@ import axios from 'axios'
     data () {
       return {
           items:[],
-          calssifyIndex:''
+          calssifyIndex: 0,
+          right:[],
+          list:[]
       };
     },
 
@@ -49,6 +52,7 @@ import axios from 'axios'
     methods: {
         selectSort(index){
             this.calssifyIndex = index
+            this.right = this.list[index]
         }
     },
 
@@ -56,10 +60,10 @@ import axios from 'axios'
     created(){
         axios.get('/static/ceshi.json').then((res) =>{
             this.items = res.data.data.classify
-            console.log(this.items)
+            this.list = res.data.data.classify.right
+            this.right = this.list[0]
         })
     }
-
   }
 
 </script>
