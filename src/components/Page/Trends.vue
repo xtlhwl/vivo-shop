@@ -1,7 +1,7 @@
 <template>
   <div>
       <t-header></t-header>
-      <t-content></t-content>   
+      <t-content :News="News"></t-content>   
     <t-footer></t-footer>
   </div>
 </template>
@@ -10,12 +10,11 @@
 import footer from '../HomeFooter.vue'
 import header from '../header/Theader.vue'
 import content from '../common/content.vue'
+import  axios from 'axios'
   export default {
-    name:'',
-    props:[''],
     data () {
       return {
-
+          News:[]
       };
     },
 
@@ -31,9 +30,16 @@ import content from '../common/content.vue'
 
     mounted() {},
 
-    methods: {},
+    methods: {
+        
+    },
 
-    watch: {}
+    watch: {},
+    created(){
+        axios.get('/static/ceshi.json').then((res) =>{
+            this.News = res.data.data.news
+        })
+    }
 
   }
 
