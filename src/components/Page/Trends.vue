@@ -23,7 +23,6 @@ import  axios from 'axios'
         't-header':header,
         't-content':content
     },
-
     computed: {},
 
     beforeMount() {},
