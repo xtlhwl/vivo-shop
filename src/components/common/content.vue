@@ -44,7 +44,6 @@
         padding-top 1.45rem
         padding-bottom 1.45rem
         // position absolute
-       
         .container-box
             width 100%
             height 8.4rem
