@@ -1,9 +1,10 @@
 <template>
   <div class="container">
-      <div class="container-bg">
+      <div class="container-bj">
           <img src="/static/img/tou.jpg">
           <span>Seven</span>
       </div>
+
       <div class="container-integral">
           <p>
               <span>0</span>
@@ -11,83 +12,108 @@
           </p>
           <p>
               <span>0</span>
-              <span>鼓励金</span>
+              <span>换鼓励金</span>
           </p>
           <p>
-              <span>0</span>
+              <span>{{jifeng}}</span>
               <span>积分</span>
           </p>
       </div>
-      <router-link class="container-order" tag="div" to="/">
-          <div class="container-order-1">
-              <p class="left">我的订单</p>
-              <p class="right">全部订单 ></p>
-          </div>
-          <div class="container-order-2">
-              <p>
-                      
-              </p>
-          </div>
-      </router-link>
 
+     <router-link class="container-order" to="/order" tag="div">
+         <div class="container-order-1">
+             <p class="left">我的订单</p>
+             <p class="right">全部订单 ></p>
+         </div>
+         <div class="container-order-2">
+             <p class=""></p>
+         </div>
+     </router-link>
+    
       <div class="container-con" id="transition">
           <router-link to="/" class="con">
-            <div class="con-left">
-                <i class="iconfont icon-collection"></i>
-                <span>我的收藏</span>
-            </div>
-            <div class="con-rigth">
+                 <div class="con-left">
+                  <i class="iconfont icon-collection"></i>
+                  <span>我的收藏</span>
+              </div>
+              <div class="con-rigth">
                   <i class="iconfont icon-youjiantou"></i>
               </div>
           </router-link>
 
-          <router-link to="/" class="con" id="transition">
-            <div class="con-left">
-                <i class="iconfont icon-gouwuche"></i>
-                <span>我的收货地址</span>
-            </div>
-            <div class="con-rigth">
-                    <i class="iconfont icon-youjiantou"></i>
-            </div>
+            <router-link to="/" class="con" id="transition">
+                 <div class="con-left">
+                  <i class="iconfont icon-gouwuche"></i>
+                  <span>我的收货地址</span>
+              </div>
+              <div class="con-rigth">
+                  <i class="iconfont icon-youjiantou"></i>
+              </div>
           </router-link>
-          <router-link to="/"  class="con" id="transition">
-            <div class="con-left">
-                <i class="iconfont icon-gouwuche"></i>
-            </div>
+
+           <router-link to="/" class="con" id="transition">
+                 <div class="con-left">
+                  <i class="iconfont icon-gouwuche"></i>
+                  <span>我的购物车</span>
+              </div>
+              <div class="con-rigth">
+                  <i class="iconfont icon-youjiantou"></i>
+              </div>
           </router-link>
+
+          <router-link to="/" class="con">
+                 <div class="con-left">
+                  <i class="iconfont icon-share_icon"></i>
+                  <span>扫码分享</span>
+              </div>
+              <div class="con-rigth">
+                  <i class="iconfont icon-youjiantou"></i>
+              </div>
+          </router-link>
+          <a target="_blank" href="/" class="con">
+                 <div class="con-left">
+                  <i class="iconfont icon-bangzhuguanyuwomen"></i>
+                  <span>关于我</span>
+              </div>
+              <div class="con-rigth">
+                  <i class="iconfont icon-youjiantou"></i>
+              </div>
+          </a>
       </div>
-      
-          
-      
   </div>
 </template>
 
 <script>
-
-  export default {
-    name:'',
-    props:[''],
-    data () {
-      return {
-
-      };
-    },
-
-    components: {},
-
-    computed: {},
-
-    beforeMount() {},
-
-    mounted() {},
-
-    methods: {},
-
-    watch: {}
-  }
-
+export default {
+  name:"Mycontainer",
+  data(){
+      return{
+          container:[
+              {
+                  img:"/static/img/111.png",
+                  name:"待付款"
+              },
+               {
+                  img:"/static/img/222.png",
+                  name:"待收货"
+              },
+               {
+                  img:"/static/img/333.png",
+                  name:"待评价"
+              }, {
+                  img:"/static/img/444.png",
+                  name:"退货/退款"
+              },
+          ]
+      }
+  },
+    computed:{
+  },
+}
 </script>
-<style lang='stylus' scoped>
+
+
+<style lang="stylus" scoped>
 .container-order{
     width 100%
     height 3.5rem
@@ -141,13 +167,13 @@
 .t{
     background-image url('/static/img/t.png');
 }
-
 .container {
     width: 100%;
     height: 5rem;
     position: absolute;
     top: 1.45rem;
-    .container-bg {
+    font-size:'';
+    .container-bj {
         width: 100%;
         height: 100%;
         background: url('/static/img/bj.png') no-repeat;
@@ -156,18 +182,15 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-
         img {
             width: 2.3rem;
             height: 2.3rem;
             border-radius: 50%;
         }
-
         span {
             color: #ffffff;
             font-size: 0.5rem;
         }
-
         p {
             font-size 0.35rem;
             color: #ffffff;
@@ -192,7 +215,6 @@
             justify-content: center;
         }
     }
-
     .container-con {
         margin-bottom 1.45rem
         .con {
@@ -201,22 +223,19 @@
             background: #ffffff;
             border-bottom: 1px solid #f0f0f0;
             display: block;
-
+            font-size: 24px
             .con-left {
                 float: left;
                 line-height: 1.3rem;
                 padding-left: 0.47rem;
-
                 i {
                     font-size: 0.5rem;
                 }
-
                 span {
                     font-size: 0.37rem;
                     padding-left: 0.1rem;
                 }
             }
-
             .con-rigth {
                 float: right;
                 line-height: 1.3rem;

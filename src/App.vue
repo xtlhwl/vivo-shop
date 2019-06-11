@@ -16,7 +16,7 @@ export default {
 }
 </script>
 
-<style>
+<style >
  @import 'styles/style.css';
  @import './fon/iconfont.css';
 body{
