@@ -1,7 +1,7 @@
 <template>
   <div>
-      <t-header></t-header>
-      <t-content :News="News"></t-content>   
+      <t-header name="咨询动态"></t-header>
+      <t-content :News="News" ></t-content>   
     <t-footer></t-footer>
   </div>
 </template>

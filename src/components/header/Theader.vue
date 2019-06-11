@@ -2,7 +2,7 @@
   <div class="header">
       <div class="header-left" @click="$router.go(-1)">
       </div>
-      <div class="header-in">咨询动态</div>
+      <div class="header-in">{{name}}</div>
       <div class="header-rigth"></div>
   </div>
 </template>
@@ -10,7 +10,12 @@
 
   export default {
     name:'',
-    props:[''],
+    props:{
+        name:{
+            type:String,
+            default:""
+        }
+    },
     data () {
       return {
 
