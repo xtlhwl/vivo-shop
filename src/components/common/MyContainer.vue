@@ -4,7 +4,6 @@
           <img src="/static/img/tou.jpg">
           <span>Seven</span>
       </div>
-
       <div class="container-integral">
           <p>
               <span>0</span>
@@ -15,7 +14,7 @@
               <span>换鼓励金</span>
           </p>
           <p>
-              <span>{{jifeng}}</span>
+              <span>0</span>
               <span>积分</span>
           </p>
       </div>
