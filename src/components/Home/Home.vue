@@ -10,7 +10,7 @@
 </template>
 <script>
 
-import HomeList from './HomeList.vue'
+import HomeList from './HomeList'
 import HomeSwipe from './HomeSwipe.vue'
 import HomeFooter from '../HomeFooter.vue'
 import HomeContainer from './HomeContainer.vue'
@@ -31,7 +31,6 @@ export default {
   methods:{
     getData:function(){
       axios.get("/static/ceshi.json").then((res) =>{
-        
         this.items = res.data.data.home
         console.log(this.items)
       })
