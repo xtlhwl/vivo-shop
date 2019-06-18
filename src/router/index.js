@@ -4,6 +4,7 @@ import Home from '@/components/Home/Home.vue'
 import Mine from '@/components/Page/Mine.vue'
 import Class from '@/components/Page/Class.vue'
 import Trends from '@/components/Page/Trends.vue'
+import Choose from '@/components/common/choose.vue'
 
 Vue.use(Router)
 
@@ -31,8 +32,13 @@ export default new Router({
     },
     {
       path:'/trends',
-      name:'class',
+      name:'trends',
       component:Trends
+    },
+    {
+      path:'/choose',
+      name:'choose',
+      component:Choose
     }
   ]
 })

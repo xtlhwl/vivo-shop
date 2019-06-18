@@ -23,8 +23,8 @@ export default {
     }
   },
   components: {
-    HomeList,
     HomeSwipe,
+    HomeList,
     HomeFooter,
     HomeContainer, 
   },

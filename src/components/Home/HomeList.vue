@@ -1,62 +1,32 @@
 <template>
-  <div class="HomeList">
+   <div class="HomeList">
     <ul>
-        <li >
-            <div>
-                <img v-lazy="/static/img/xuangou.jpg" alt="选购">
-            </div>
-        </li>
-        <li >
-            <div>
-                <img v-lazy="/static/img/peijian.jpg" alt="选购">
-            </div>
-        </li>
-        <li >
-            <div @click="btn">
-                <img v-lazy="/static/img/pingbao.jpg" alt="选购">
-            </div>
-        </li>
-        <li >
-            <div @click="btn">
-                <img v-lazy="/static/img/dingzhi.jpg" alt="选购">
-            </div>
-        </li>
+        <li><div @click="xuangou"><img src="/static/img/xuangou.jpg" alt="选购"></div></li>
+        <li><div  @click="parts"><img src="/static/img/peijian.jpg" alt="配件"></div></li>
+        <li><div @click="btn"><img src="/static/img/pingbao.jpg" alt="屏保"></div></li>
+        <li><div @click="btn"><img src="/static/img/dingzhi.jpg" alt="定制"></div></li>
     </ul>
-  </div>
+    </div>
 </template>
 
 <script>
 
-  export default {
-    name:'',
-    props:[''],
-    data () {
-      return {
+export default {
 
-      };
+  methods: {
+      xuangou:function(){
+      this.$router.push({path:"choose"})
     },
-
-    components: {},
-
-    computed: {},
-
-    beforeMount() {},
-
-    mounted() {},
-
-    methods: {
-        btn(){
-            alert("选择碎屏宝or定制手机")
-        },
+    parts:function(){
+      this.$router.push({path:"parts"})
     },
-
-    watch: {}
-
-  }
-
+    btn:function(){
+      MessageBox('提示', 'Vue的第一个项目能给个star么？Thank you');
+    }
+  },
+}
 </script>
 <style lang="stylus" scoped>
-//rem 
 .HomeList
     width 100%;
     height 2rem;
@@ -79,3 +49,6 @@
             width: 100%;
             height: 100%
 </style>
+
+
+
