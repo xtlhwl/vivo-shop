@@ -9,7 +9,6 @@
 <script>
 
   export default {
-    name:'',
     props:{
         name:{
             type:String,

@@ -1,37 +1,46 @@
 <template>
   <div class="choose">
-      
+      <C-Header title="选购手机"></C-Header>
     <div class="_choose_twoMain">
         <div class="upper">
-            <span ></span>
+            <span v-for="(list,index) in ListHeader " :key="index" class="list"
+                @click="btn(index)"  :class="{ active:index === phoneIndex }"
+            >{{list.name}}</span>
         </div>
         <div class="sort">
-            <p @click="rise">价格升序</p>
-            <p @click="drop">价格降序</p>
+            <p @click="order">价格升序</p>
+            <p >价格降序</p>
             <p>销量有限</p>
         </div>
         <div class="lower">
-            <div class="lower_list">
-                <img src="" alt="">
-                <p></p>
-                <p style="font-size:0.3rem;"></p>
-                <div>￥</div>
-            </div>
+            <div class="lower_list" v-for="(list,index) in lower" :key="index">
+                <img v-bind:src="list.ImageOne" alt="图片" >
+                <p>{{list.name}}</p>
+                <p style="font-size:0.3rem;">{{list.nametwo}}</p>
+                <div>￥{{list.Price}}</div>
+            </div> 
         </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+import Header from '../header/header'
 
   export default {
     data () {
       return {
-
-      };
+          List:{},
+          ListHeader:{},
+          phoneIndex:'',
+          lower:[]
+        };
     },
 
-    components: {},
+    components: {
+        'C-Header':Header
+    },
 
     computed: {},
 
@@ -39,8 +48,30 @@
 
     mounted() {},
 
-    methods: {},
-
+    methods: {
+        getList(){
+            var list
+            axios('/static/ceshi.json').then((res)=>{
+                list = res.data.data
+                this.List = list.phone.lower
+                this.ListHeader = list.phone.upper
+            })
+        },
+        btn(X){
+            this.phoneIndex = X
+            this.lower = this.List[X].lower_data
+        },
+        order(){
+            this.lower.sort((a,b) =>{
+                 return a-b
+            })
+            console.log(this.lower)
+        }
+    },
+    created(){
+        this.getList()
+        
+    },
     watch: {}
 
   }
