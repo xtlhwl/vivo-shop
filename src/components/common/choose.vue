@@ -60,7 +60,7 @@ import Header from '../header/header'
         btn(X){
             this.phoneIndex = X
             this.lower = this.List[X].lower_data
-        },
+        }, 
         order(){
             this.lower.sort((a,b) =>{
                  return a-b
