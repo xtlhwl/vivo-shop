@@ -22,8 +22,7 @@
         </div>
     </div>
   </div>
-</template>
-
+</template
 <script>
 import axios from 'axios';
 import Header from '../header/header'
