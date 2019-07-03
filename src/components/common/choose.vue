@@ -22,7 +22,7 @@
         </div>
     </div>
   </div>
-</template
+</template>
 <script>
 import axios from 'axios';
 import Header from '../header/header'
@@ -61,6 +61,7 @@ import Header from '../header/header'
             this.lower = this.List[X].lower_data
         }, 
         order(){
+            console.log(this.lower)
             this.lower.sort((a,b) =>{
                  return a-b
             })
